@@ -19,13 +19,12 @@ namespace purge{
 
 
     std::string to_string(purge::TEST_STATE t){
-        static std::map<purge::TEST_STATE,std::string> map_test_state_to_string =
-                {
+        static std::map<purge::TEST_STATE,std::string> map_test_state_to_string = {
                         {purge::TEST_STATE::OK,"\033[1;32m Ok\033[0m"},
                         {purge::TEST_STATE::FAILED,"\033[1;31m Failed\033[0m"},
                         {purge::TEST_STATE::SEGMENTATION_FAULT,"\033[1;35m Segmentation fault\033[0m"}
                 };
-        if(map_test_state_to_string.count(t)> 0 ){
+        if( map_test_state_to_string.count(t) > 0 ){
             return map_test_state_to_string[t];
         }
         return "NOT VALID";
@@ -47,9 +46,6 @@ namespace purge{
         std::string description;
         std::string test_name;
         std::vector<entry_item> test_items;
-
-
-
     };
 
     class log_book{

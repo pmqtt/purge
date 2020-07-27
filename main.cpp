@@ -27,12 +27,11 @@ struct NumberClass{
     bool is_number(char x){
         return test_digit(x);
     }
+
 };
 
 METHODE_TEST_CASE(TEST_CLASS_METHOD,NumberClass,{},is_number,(false,'a'), ( true,'1'),(false,'b'));
 FUNCTION_TEST_CASE(IS_NUMBER,test_digit, (false,'a'), ( true,'1'),(false,'b') );
-
-
 
 
 SIMPLE_TEST_CASE(LOG_BOOK_TEST){
@@ -48,11 +47,31 @@ SIMPLE_TEST_CASE(CONTAINER_TEST){
     REQUIRE(isSumGTZero(vec));
 }
 
-SIMPLE_TEST_CASE(SimpleTest){
 
-    std::cout<<"Hallo Welt"<<std::endl;
+INTEGRATION_TEST("XXX"){
+    FIXTURE() {
+        std::vector<int> vec = {1, 2, 3, 4};
+    }
+    SZENARIO("Resize vector"){
+
+    }
+    SZENARIO("Remove element"){
+
+    }
 }
 
+/*
+INTEGRATION_TEST(){
+
+    SZENARIO(){
+
+    }
+    TIMING_EVENT(std::chrono::seconds(10)){
+        //KILL SERVER
+    }
+
+}
+*/
 /*
 FUZZER_CONTAINER_CASE(IS_SUM_GT_FUZZ,std::vector<int>,purge::item_rule<int>([](int &&v)->bool{ return v > 0; }),FZ){
     REQUIRE(isSumGTZero(FZ));

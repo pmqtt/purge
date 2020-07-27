@@ -97,6 +97,8 @@ private:
     ptester().test(#X,__LINE__,X,__FUNCTION__)
 
 
+
+
 #define PURGE_MAIN \
     INIT_TEST_REGISTRY \
     int main(int argc,char** argv){ \
