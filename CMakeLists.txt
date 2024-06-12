@@ -15,4 +15,4 @@ install(
         DESTINATION
         "${CMAKE_INSTALL_INCLUDEDIR}/purge"
 )
-#add_executable(main main.cpp)
+add_executable(main main.cpp)
